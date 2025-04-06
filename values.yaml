@@ -57,18 +57,30 @@ service:
   port: 80
 
 env:
-  NODE_ENV: production
-  ADMIN_PASSWORD: admin
-  DB_CHARSET: utf8mb4
-  DB_HOST: postgres
-  DB_NAME: etherpad
-  DB_PASS: password
-  DB_PORT: 5432
-  DB_TYPE: postgres
-  DB_USER: etherpad
-  DEFAULT_PAD_TEXT: "Welcome to Etherpad!"
-  DISABLE_IP_LOGGING: false
-  TRUST_PROXY: true
+  - name: NODE_ENV
+    value: production
+  - name: ADMIN_PASSWORD
+    value: admin
+  - name: DB_CHARSET
+    value: utf8mb4
+  - name: DB_HOST
+    value: postgres
+  - name: DB_NAME
+    value: etherpad
+  - name: DB_PASS
+    value: password
+  - name: DB_PORT
+    value: "5432"
+  - name: DB_TYPE
+    value: postgres
+  - name: DB_USER
+    value: etherpad
+  - name: DEFAULT_PAD_TEXT
+    value: "Welcome to Etherpad!"
+  - name: DISABLE_IP_LOGGING
+    value: "false"
+  - name: TRUST_PROXY
+    value: "true"
 
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
