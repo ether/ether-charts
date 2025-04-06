@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: etherpad
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: .
+    chart: etherpad
+    repoURL: https://github.com/ether/ether-charts
+    targetRevision: main
+    helm:
+      releaseName: etherpad
+      valueFiles:
+        - values.yaml
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: etherpad
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
