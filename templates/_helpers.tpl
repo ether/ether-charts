@@ -60,3 +60,14 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Create the image path for the passed in image field
+*/}}
+{{- define "etherpad.image" -}}
+{{- if eq (substr 0 7 .tag) "sha256:" -}}
+{{- printf "%s@%s" .repository .tag -}}
+{{- else -}}
+{{- printf "%s:%s" .repository .tag -}}
+{{- end -}}
+{{- end -}}
