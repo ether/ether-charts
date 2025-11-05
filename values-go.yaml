@@ -1,5 +1,5 @@
 image:
-  tag: "v0.0.1-8243d1c"
+  tag: "v0.0.1-bc92523"
   repository: ghcr.io/ether/etherpad-go
 
 service:
