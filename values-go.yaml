@@ -1,6 +1,3 @@
 image:
   tag: "ls-09a3c6c"
   repository: ghcr.io/ether/etherpad-go
-
-service:
-  port: 3000
