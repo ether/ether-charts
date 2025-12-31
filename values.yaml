@@ -123,6 +123,13 @@ readinessProbe:
     path: /
     port: http
 
+
+startUpProbe:
+  httpGet:
+    path: /
+    port: http
+    failureThreshold: 30
+
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
   enabled: false
