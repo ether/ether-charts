@@ -124,7 +124,7 @@ readinessProbe:
     port: http
 
 
-startUpProbe:
+startupProbe:
   httpGet:
     path: /
     port: http
