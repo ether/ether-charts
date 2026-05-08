@@ -16,6 +16,7 @@ podSecurityContext: {}
 securityContext: {}
 
 auth:
+  createSecret: true  # set to false when using SealedSecrets
   username: etherpad
   password: "CHANGE_ME"  # Must be overridden in production
   database: etherpad
