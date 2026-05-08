@@ -11,4 +11,15 @@ entries:
     urls:
     - https://github.com/ether/ether-charts/releases/download/etherpad-0.1.2/etherpad-0.1.2.tgz
     version: 0.1.2
-generated: "2026-05-08T20:33:13.918266012Z"
+  postgres:
+  - apiVersion: v2
+    appVersion: "18"
+    created: "2026-05-08T21:49:05.641732063Z"
+    description: A Helm chart for PostgreSQL as a StatefulSet
+    digest: b498b3e1447f2105e66f0b732a2b9bd58c0253e608012d1b290042684444e799
+    name: postgres
+    type: application
+    urls:
+    - https://github.com/ether/ether-charts/releases/download/postgres-0.1.0/postgres-0.1.0.tgz
+    version: 0.1.0
+generated: "2026-05-08T21:49:05.641736686Z"
