@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ include "postgres.fullname" . }}
+  annotations:
+    argocd.argoproj.io/sync-options: Replace=true
   labels:
     {{- include "postgres.labels" . | nindent 4 }}
 spec:
