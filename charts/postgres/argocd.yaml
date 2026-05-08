@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgres
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  project: default
+  sources:
+    - repoURL: https://github.com/ether/ether-charts
+      targetRevision: main
+      path: charts/postgres
+      helm:
+        valueFiles:
+          - values.yaml
+          - $values/envs/dev/postgres-values.yaml
+        releaseName: postgres
+    - repoURL: https://github.com/ether/ether-infra
+      targetRevision: main
+      ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: etherpad
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true

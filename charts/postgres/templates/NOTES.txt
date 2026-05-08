@@ -1,0 +1,11 @@
+PostgreSQL has been deployed as a StatefulSet.
+
+Connection details (from within the cluster):
+  Host:     {{ include "postgres.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
+  Port:     5432
+  Database: {{ .Values.auth.database }}
+  Username: {{ .Values.auth.username }}
+  Password: stored in Secret/{{ include "postgres.fullname" . }} key "password"
+
+DNS for direct pod access (headless):
+  {{ include "postgres.fullname" . }}-headless.{{ .Release.Namespace }}.svc.cluster.local
