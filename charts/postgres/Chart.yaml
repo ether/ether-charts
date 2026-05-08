@@ -3,4 +3,4 @@ name: postgres
 description: A Helm chart for PostgreSQL as a StatefulSet
 type: application
 version: 0.1.0
-appVersion: "16.3"
+appVersion: "18"
