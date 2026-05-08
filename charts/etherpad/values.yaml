@@ -158,3 +158,13 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+httpRoute:
+  enabled: false
+  gateway:
+    name: eg
+    namespace: envoy-gateway-system
+  hostnames:
+    - chart-example.local
+  timeout:
+    request: "0s"
