@@ -1,0 +1,38 @@
+replicaCount: 1
+
+image:
+  repository: postgres
+  tag: "16-alpine"
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+auth:
+  username: etherpad
+  password: password
+  database: etherpad
+
+persistence:
+  storageClassName: ""
+  size: 1Gi
+
+resources: {}
+
+startupProbe:
+  failureThreshold: 30
+  periodSeconds: 10
+
+livenessProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  failureThreshold: 6
+
+readinessProbe:
+  initialDelaySeconds: 5
+  periodSeconds: 5
+  failureThreshold: 6
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
