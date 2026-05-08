@@ -5,12 +5,19 @@ image:
   tag: "16-alpine"
   pullPolicy: IfNotPresent
 
+imagePullSecrets: []
+
 nameOverride: ""
 fullnameOverride: ""
 
+podAnnotations: {}
+podLabels: {}
+podSecurityContext: {}
+securityContext: {}
+
 auth:
   username: etherpad
-  password: password
+  password: "CHANGE_ME"  # Must be overridden in production
   database: etherpad
 
 persistence:
@@ -22,16 +29,19 @@ resources: {}
 startupProbe:
   failureThreshold: 30
   periodSeconds: 10
+  timeoutSeconds: 5
 
 livenessProbe:
   initialDelaySeconds: 30
   periodSeconds: 10
   failureThreshold: 6
+  timeoutSeconds: 5
 
 readinessProbe:
   initialDelaySeconds: 5
   periodSeconds: 5
   failureThreshold: 6
+  timeoutSeconds: 5
 
 nodeSelector: {}
 tolerations: []
