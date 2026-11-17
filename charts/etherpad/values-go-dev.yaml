@@ -1,3 +1,3 @@
 image:
-  tag: "sha256:97fa3471ec56c0cdf7539d2ba45a313080ad78a78e37dd0ab2aa08db4b68beb5"
+  tag: "sha256:7723e38b021245468fe0502742bc63bf6cd1af4859921f29df787e644bd191c9"
   repository: ghcr.io/ether/etherpad-go
